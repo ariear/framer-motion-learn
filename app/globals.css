@@ -1,3 +1,86 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.scroll-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 100px auto;
+    /* This is needed to prevent the image from "jittering" partway through the transition */
+    overflow: hidden;
+  }
+.daun {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+  }
+
+  .copy {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    font-size: 24px;
+    margin-left: 5%;
+    text-align: left;
+  }
+  
+  .copy h2 {
+    font-size: 50px;
+    margin-top: 0;
+  }
+
+  .text-desc-wrap > p, .text-desc-wrap2 > p {
+    background: linear-gradient(to right, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0.253) 50%);
+    background-size: 200% 100%;
+    background-position-x: 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  .bungkus, .bungkustextfooter {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .bungkus:hover {
+    clip-path: none;
+  }
+
+  .text-story {
+    transform: translateY(80px);
+    transition: color .3s;
+  }
+
+  .bungkustextfooter p {
+    transform: translateY(60px);
+  }
+
+  .hover-reveal {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all .5s ease-out;
+    z-index: 30;
+  }
+  
+  .hover-reveal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: transform .4s ease-out;
+  }
